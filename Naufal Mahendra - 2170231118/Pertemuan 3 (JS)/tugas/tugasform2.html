@@ -1,0 +1,72 @@
+<html>
+
+<head>
+  <title>Kalkulator Sederhana Javascript</title>
+</head>
+
+<body style="background-color: #F6F4F1;"><br><br>
+  <center>
+    <form method="post" action="">
+      <label for="nilai1">Nilai 1</label>
+      <input type="text" id="nilai1" autocomplete="off">
+      <br><br>
+      <label for="nilai2">Nilai 2</label>
+      <input type="text" id="nilai2" autocomplete="off">
+      <br>
+      <br>
+      <br>
+      <label for="hasil">Hasil</label>
+      <input type="text" id="hasil" disabled="true">
+      <br>
+      <br>
+      <br>
+      <button type="button" id="tambah">+</button>
+      <button type="button" id="kurang">-</button>
+      <button type="button" id="kali">x</button>
+      <button type="button" id="bagi">/</button>
+      <button type="button" id="reset">reset</button>
+
+    </form>
+  </center>
+
+  <script language="Javascript">
+    var nilai1 = document.getElementById('nilai1');
+    var nilai2 = document.getElementById('nilai2');
+    var tambah = document.getElementById('tambah');
+    var kurang = document.getElementById('kurang');
+    var kali = document.getElementById('kali');
+    var bagi = document.getElementById('bagi');
+    var hasil = document.getElementById('hasil');
+    var reset = document.getElementById('reset');
+
+    tambah.addEventListener('click', function () {
+      tambah = parseInt(nilai1.value) + parseInt(nilai2.value);
+      hasil.value = tambah;
+    });
+
+    kurang.addEventListener('click', function () {
+      kurang = parseInt(nilai1.value) - parseInt(nilai2.value);
+      hasil.value = kurang;
+    });
+
+    kali.addEventListener('click', function () {
+      kali = parseInt(nilai1.value) * parseInt(nilai2.value);
+      hasil.value = kali;
+    });
+
+    bagi.addEventListener('click', function () {
+      bagi = parseInt(nilai1.value) / parseInt(nilai2.value);
+      hasil.value = bagi;
+    });
+
+    reset.addEventListener('click', function () {
+      hasil.value = "";
+      nilai1.value = "";
+      nilai2.value = "";
+    });
+
+    document.write("<br>Dimodifikasi terakhir pada" + document.lastModified);
+  </script>
+</body>
+
+</html>
